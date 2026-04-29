@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 23</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    console.log('--- Hasil Lemparan Dadu ---');
+
+    // Perulangan berjalan sebanyak 10 kali
+    for (var i = 1; i <= 10; i++) {
+        // Menghasilkan angka acak dari rentang 1 sampai 6
+        var dice = Math.floor(Math.random() * 6) + 1;
+        
+        // Menampilkan hasilnya di console
+        console.log('Lemparan ke-' + i + ' menghasilkan angka: ' + dice);
+    }
+</script>
+
+</body>
+</html>

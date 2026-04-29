@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body><br/>
+
+<div class="w3-container">
+    <div class="w3-container w3-cell">
+        <h2 class="w3-center">Create Account</h2>
+        
+        <p><label>First Name</label>
+        <input class="w3-input w3-border" id="fname" type="text"></p>
+        
+        <p><label>Last Name</label>
+        <input class="w3-input w3-border" id="lname" type="text"></p>
+
+        <!-- Tambahan input baru mulai dari sini -->
+        <p><label>Country</label>
+        <input class="w3-input w3-border" id="country" type="text"></p>
+
+        <p><label>Email Address</label>
+        <input class="w3-input w3-border" id="email" type="text"></p>
+
+        <p><label>Phone Number</label>
+        <input class="w3-input w3-border" id="phone" type="text"></p>
+
+        <p><label>Password</label>
+        <input class="w3-input w3-border" id="pass" type="password"></p>
+
+        <p><label>Confirm Password</label>
+        <input class="w3-input w3-border" id="cpass" type="password"></p>
+        
+        <p><input class="w3-check" id="terms" type="checkbox">
+        <label>Terms and Condition</label></p>
+
+        <p><button class="w3-button w3-blue w3-block" onclick="enter()">Create</button></p>
+    </div>
+</div>
+
+<div class="w3-container">
+    <div class="w3-container w3-cell">
+        <p id="result"></p>
+    </div>
+</div>
+
+<script>
+function enter() {
+    // Ngambil data kayak di Task 37
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    
+    // Tambahan buat nangkap isian form yang baru
+    var country = document.getElementById("country").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var pass = document.getElementById("pass").value;
+    var cpass = document.getElementById("cpass").value;
+    
+    // Khusus checkbox pakai .checked
+    var terms = document.getElementById("terms").checked;
+
+    // Ngecek kondisi password sama atau ngga
+    var passInfo;
+    if (pass == cpass) {
+        passInfo = "Password sama dengan Confirm Password";
+    } else {
+        passInfo = "Password tidak sama dengan Confirm Password !";
+    }
+
+    // Nampilin ke layar pake innerHTML
+    document.getElementById("result").innerHTML = 
+        "First Name: " + fname + "<br>" +
+        "Last Name: " + lname + "<br>" +
+        "Country: " + country + "<br>" +
+        "Email: " + email + "<br>" +
+        "Phone: " + phone + "<br>" +
+        "Terms: " + terms + "<br><br>" +
+        "<b>Keterangan: " + passInfo + "</b>";
+}
+</script>
+
+</body>
+</html>

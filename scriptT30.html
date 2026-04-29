@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // 1. Inisialisasi array kosong untuk menyimpan buah
+    var fruits = [];
+
+    // 2. Meminta input pertama dari user
+    var inputBuah = prompt('Masukkan nama buah (Ketik "stop" untuk berhenti):');
+
+    // 3. Menggunakan for loop sebagai sentinel
+    // Loop akan berjalan SELAMA inputBuah (yang diubah ke huruf kecil) BUKAN 'stop'
+    for (var i = 0; inputBuah.toLowerCase() !== 'stop'; i++) {
+        
+        // Memasukkan nama buah ke dalam array pada indeks ke-i
+        fruits[i] = inputBuah;
+        
+        // Meminta input kembali untuk dicek pada putaran berikutnya
+        inputBuah = prompt('Masukkan nama buah selanjutnya (Ketik "stop" untuk berhenti):');
+    }
+
+    // 4. Menampilkan isi array di console setelah perulangan selesai
+    console.log('Program berhenti. Berikut adalah daftar array fruits:');
+    console.log(fruits);
+</script>
+
+</body>
+</html>

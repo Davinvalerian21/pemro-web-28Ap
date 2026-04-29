@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 21</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Inisialisasi string awal untuk menampung list
+    var electricList = 'list of electric : ';
+    var waterList = 'list of water : ';
+
+    // Perulangan for berjalan sebanyak 3 kali
+    for (var i = 1; i <= 3; i++) {
+        var pokemon = prompt('Masukkan nama Pokémon ke-' + i + ' (contoh: pikachu, lapras, greninja):');
+        
+        // Mengubah input menjadi huruf kecil agar sesuai dengan pengecekan
+        pokemon = pokemon.toLowerCase();
+
+        // Pengecekan tipe dan penggabungan string (concatenation) menggunakan +=
+        if (pokemon === 'pikachu' || pokemon === 'raichu' || pokemon === 'elekid') {
+            electricList += pokemon + ', ';
+        } else if (pokemon === 'squirtle' || pokemon === 'lapras' || pokemon === 'greninja') {
+            waterList += pokemon + ', ';
+        } else {
+            console.log(pokemon + ' tidak ada dalam data kategori.');
+        }
+    }
+
+    // Menampilkan hasil list akhir di console setelah perulangan selesai
+    console.log(electricList);
+    console.log(waterList);
+</script>
+
+</body>
+</html>

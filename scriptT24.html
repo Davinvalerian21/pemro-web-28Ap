@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 24</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Variabel untuk menyimpan skor
+    var userScore = 0;
+    var computerScore = 0;
+
+    console.log('--- Mulai Pertandingan Batu Gunting Kertas ---');
+
+    // Perulangan berjalan sebanyak 3 kali (3 ronde)
+    for (var i = 1; i <= 3; i++) {
+        // Meminta input dari user
+        var userChoice = prompt('Ronde ' + i + '\nMasukkan pilihanmu (batu / gunting / kertas):');
+        userChoice = userChoice.toLowerCase(); // Ubah ke huruf kecil untuk mempermudah pengecekan
+
+        // Generate pilihan komputer secara acak (0, 1, atau 2)
+        var randomNum = Math.floor(Math.random() * 3);
+        var computerChoice = '';
+
+        // Mapping angka acak menjadi pilihan string
+        if (randomNum === 0) {
+            computerChoice = 'batu';
+        } else if (randomNum === 1) {
+            computerChoice = 'gunting';
+        } else {
+            computerChoice = 'kertas';
+        }
+
+        // Logika penentuan pemenang per ronde
+        var resultMessage = '';
+
+        if (userChoice === computerChoice) {
+            resultMessage = 'Draw';
+        } else if (
+            (userChoice === 'batu' && computerChoice === 'gunting') ||
+            (userChoice === 'gunting' && computerChoice === 'kertas') ||
+            (userChoice === 'kertas' && computerChoice === 'batu')
+        ) {
+            resultMessage = 'User Wins';
+            userScore++; // Tambah skor user
+        } else if (
+            (userChoice === 'batu' && computerChoice === 'kertas') ||
+            (userChoice === 'gunting' && computerChoice === 'batu') ||
+            (userChoice === 'kertas' && computerChoice === 'gunting')
+        ) {
+            resultMessage = 'Computer Wins';
+            computerScore++; // Tambah skor komputer
+        } else {
+            resultMessage = 'Invalid Input'; // Jika user typo
+        }
+
+        // Tampilkan hasil per ronde di console
+        console.log('User ' + userChoice + ' Vs Computer ' + computerChoice + ' = ' + resultMessage);
+    }
+
+    // Menentukan dan menampilkan pemenang akhir setelah 3 ronde
+    console.log('--------------------------------------------');
+    if (userScore > computerScore) {
+        console.log('User wins the game !');
+    } else if (computerScore > userScore) {
+        console.log('Computer wins the game !');
+    } else {
+        console.log('The game ends in a Draw !');
+    }
+</script>
+
+</body>
+</html>

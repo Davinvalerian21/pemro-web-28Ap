@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 14</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Meminta inputan username dan passcode dari user melalui prompt
+    var username = prompt('Masukkan username Anda:');
+    var passcode = prompt('Masukkan passcode Anda:');
+
+    // Mengecek apakah username = admin dan passcode = pass
+    if (username === 'admin' && passcode === 'pass') {
+        // Jika benar, tampilkan pesan di console
+        console.log('login true');
+    } else {
+        // Jika salah, tampilkan alert dan pesan di console
+        alert('incorrect username or passcode !');
+        console.log('login false');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 17</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var counter = 0;
+    var total = 0; // Variabel untuk menyimpan hasil penjumlahan
+    var angka;
+
+    // Perulangan berjalan selama counter kurang dari 10 (sebanyak 10 kali)
+    while (counter < 10) {
+        // Meminta input dari user
+        // parseInt() digunakan untuk mengubah input string menjadi angka numerik
+        angka = parseInt(prompt('Masukkan angka numerik ke-' + (counter + 1) + ':'));
+        
+        // Menambahkan angka yang diinput ke dalam total
+        total += angka;
+        
+        // Menaikkan nilai counter agar perulangan bisa berhenti
+        counter += 1;
+    }
+
+    // Menampilkan hasil akhir di console
+    console.log('Total penjumlahan 10 angka adalah: ' + total);
+</script>
+
+</body>
+</html>

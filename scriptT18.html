@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 18</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var total = 0;
+    
+    // Meminta input pertama kali sebelum mengecek kondisi perulangan
+    var angka = parseInt(prompt('Masukkan angka numerik (Ketik -1 untuk berhenti):'));
+
+    // Perulangan akan terus berjalan SELAMA angka yang dimasukkan BUKAN -1
+    while (angka !== -1) {
+        // Menambahkan angka yang diinput ke dalam total
+        total += angka;
+        
+        // Meminta input kembali untuk dicek pada putaran berikutnya
+        angka = parseInt(prompt('Masukkan angka numerik selanjutnya (Ketik -1 untuk berhenti):'));
+    }
+
+    // Menampilkan hasil akhir di console setelah user mengetik -1 dan perulangan berhenti
+    console.log('Program berhenti. Total penjumlahan angkanya adalah: ' + total);
+</script>
+
+</body>
+</html>

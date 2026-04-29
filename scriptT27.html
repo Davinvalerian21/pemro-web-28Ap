@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 27</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // 1. Mendeklarasikan function dengan 2 parameter: kata dan jumlah
+    function tampilkanKustom(kata, jumlah) {
+        // Perulangan berjalan sebanyak nilai pada parameter 'jumlah'
+        for (var i = 1; i <= jumlah; i++) {
+            // Mencetak parameter 'kata' ke console
+            console.log(kata);
+        }
+    }
+
+    // 2. Meminta input dari user secara dinamis
+    var inputKata = prompt('Masukkan kata atau kalimat yang ingin dimunculkan:');
+    
+    // Menggunakan parseInt() karena prompt menghasilkan string, dan kita butuh angka untuk loop
+    var inputJumlah = parseInt(prompt('Berapa kali kata tersebut ingin dimunculkan?'));
+
+    // 3. Memanggil function dan memasukkan variabel inputan user sebagai argumen
+    tampilkanKustom(inputKata, inputJumlah);
+</script>
+
+</body>
+</html>

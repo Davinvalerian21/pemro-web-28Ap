@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Mendeklarasikan array dengan tipe data campuran (Number, String, Boolean, dan Array)
+    var arrays = [1, '2', true, [4, 5, 6]];
+    
+    // 1. Menampilkan isi keseluruhan array ke console
+    console.log(arrays);
+    
+    // 2. Mengakses elemen array pada indeks pertama (indeks ke-0)
+    console.log('Isi elemen indeks ke-0: ' + arrays[0]);
+    
+    // 3. Mengakses elemen di dalam nested array
+    // arrays[3] akan memanggil [4, 5, 6]
+    // [1] setelahnya akan mengambil elemen indeks ke-1 dari [4, 5, 6], yaitu 5
+    console.log('Isi elemen indeks ke-3 sub-indeks ke-1: ' + arrays[3][1]);
+</script>
+
+</body>
+</html>

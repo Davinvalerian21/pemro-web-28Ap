@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript - Task 20</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Perulangan for berjalan dari i = 1 sampai i = 3
+    for (var i = 1; i <= 3; i++) {
+        // Meminta input nama pokemon dari user
+        var pokemon = prompt('Masukkan nama Pokémon ke-' + i + ' (contoh: pikachu, lapras, greninja):');
+        
+        // Mengubah input menjadi huruf kecil semua (opsional, untuk menghindari error jika user mengetik huruf kapital)
+        pokemon = pokemon.toLowerCase();
+
+        // Mengecek tipe pokemon berdasarkan tabel menggunakan operator logika OR (||)
+        if (pokemon === 'pikachu' || pokemon === 'raichu' || pokemon === 'elekid') {
+            console.log(pokemon + ' is an electric type pokemon');
+        } else if (pokemon === 'squirtle' || pokemon === 'lapras' || pokemon === 'greninja') {
+            console.log(pokemon + ' is a water type pokemon');
+        } else {
+            console.log(pokemon + ' is an unknown type pokemon');
+        }
+    }
+</script>
+
+</body>
+</html>
