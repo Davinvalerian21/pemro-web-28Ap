@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Javascript</title>
+</head>
+<body>
+
+    <h2>Login Form dengan CAPTCHA</h2>
+    
+    <div>
+        <input type="text" placeholder="Username"><br><br>
+        <input type="password" placeholder="Password"><br><br>
+        
+        <p>Buktikan kamu bukan robot! Hitung ini:</p>
+        
+        <img id="gambar1" src="">
+        <span id="operator" style="font-size: 24px; font-weight: bold; margin: 0 10px;"></span>
+        <img id="gambar2" src="">
+        <span style="font-size: 24px; font-weight: bold; margin: 0 10px;"> = </span>
+        
+        <input type="number" id="jawaban" placeholder="?">
+        <br><br>
+        
+        <button onclick="cekCaptcha()">Login</button>
+    </div>
+
+<script type="text/javascript">
+    var gambarAngka = [
+        "https://dummyimage.com/50x50/000/fff&text=0",
+        "https://dummyimage.com/50x50/000/fff&text=1",
+        "https://dummyimage.com/50x50/000/fff&text=2",
+        "https://dummyimage.com/50x50/000/fff&text=3",
+        "https://dummyimage.com/50x50/000/fff&text=4",
+        "https://dummyimage.com/50x50/000/fff&text=5",
+        "https://dummyimage.com/50x50/000/fff&text=6",
+        "https://dummyimage.com/50x50/000/fff&text=7",
+        "https://dummyimage.com/50x50/000/fff&text=8",
+        "https://dummyimage.com/50x50/000/fff&text=9"
+    ];
+
+    var daftarOperator = ['+', '-'];
+    
+    var kunciJawaban = 0;
+
+    function buatCaptcha() {
+        var nilai1 = Math.floor(Math.random() * 10);
+        var nilai2 = Math.floor(Math.random() * 10);
+        
+        var indexOperator = Math.floor(Math.random() * 2);
+        var operatorTerpilih = daftarOperator[indexOperator];
+
+        document.getElementById("gambar1").src = gambarAngka[nilai1];
+        document.getElementById("gambar2").src = gambarAngka[nilai2];
+        document.getElementById("operator").innerHTML = operatorTerpilih;
+
+        if (operatorTerpilih === '+') {
+            kunciJawaban = nilai1 + nilai2;
+        } else {
+            kunciJawaban = nilai1 - nilai2;
+        }
+    }
+
+    function cekCaptcha() {
+        var jawabanUser = parseInt(document.getElementById("jawaban").value);
+
+        if (jawabanUser === kunciJawaban) {
+            alert("CAPTCHA is VALID!");
+        } else {
+            alert("CAPTCHA is INVALID!");
+            document.getElementById("jawaban").value = ""; 
+            buatCaptcha(); 
+        }
+    }
+
+    buatCaptcha();
+
+</script>
+
+</body>
+</html>

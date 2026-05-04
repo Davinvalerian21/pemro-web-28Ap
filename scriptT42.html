@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+     <h2>Jam Sekarang: <span id="waktu"></span></h2>
+
+<script type="text/javascript">
+    function updateJam() {
+        var sekarang = new Date();
+        
+        var jam = sekarang.getHours();
+        var menit = sekarang.getMinutes();
+        var detik = sekarang.getSeconds();
+
+        var teksWaktu = jam + ":" + menit + ":" + detik;
+
+        document.getElementById("waktu").innerHTML = teksWaktu;
+    }
+
+    setInterval(updateJam, 1000);
+</script>
+</body>
+</html>

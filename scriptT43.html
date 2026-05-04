@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Javascript</title>
+</head>
+<body style="text-align: center; padding-top: 50px;">
+
+    <h2>Alam Indonesia</h2>
+
+    <div>
+        <img id="slider" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kFfcexrKH3DbA8vYkxpM0UlKCEXTl522vg&s" width="300" height="300">
+    </div>
+
+    <br>
+    
+    <button onclick="mundur()">Mundur</button>
+    <button onclick="maju()">Maju</button>
+
+<script type="text/javascript">
+    var gambar = [
+        "https://asset.kompas.com/crops/6cZ7gpLHJJZnwoD_-aI05DeH8V8=/0x0:0x0/750x500/data/photo/buku/637c60ed64614.jpg",
+        "https://assets.pikiran-rakyat.com/crop/0x0:0x0/720x0/webp/photo/2024/10/09/2901205611.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kFfcexrKH3DbA8vYkxpM0UlKCEXTl522vg&s",
+        "https://www.rukita.co/stories/wp-content/uploads/2023/07/images-3-622eb79406ac5bd79321a945be628d1d.webp"
+    ];
+
+    var index = 0;
+
+    function maju() {
+        index++; // Nambah 1 tiap diklik
+
+        if (index >= gambar.length) {
+            index = 0;
+        }
+
+        document.getElementById("slider").src = gambar[index];
+    }
+
+    function mundur() {
+        index--; // Kurang 1 tiap diklik
+
+        if (index < 0) {
+            index = gambar.length - 1;
+        }
+
+        document.getElementById("slider").src = gambar[index];
+    }
+</script>
+
+</body>
+</html>

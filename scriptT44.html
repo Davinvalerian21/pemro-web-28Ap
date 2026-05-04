@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <h2>Waktu: <span id="tampilWaktu">0</span> detik</h2>
+
+    <button onclick="mulai()">Start</button>
+    <button onclick="berhenti()">Stop</button>
+    <button onclick="ulang()">Reset</button>
+
+<script type="text/javascript">
+    var angka = 0;
+    var timer; // Variabel kosong buat nyimpen "ID" intervalnya nanti
+
+    function nambahAngka() {
+        angka++; // Tambah 1
+        document.getElementById("tampilWaktu").innerHTML = angka; // Tembakin ke layar
+    }
+
+    function mulai() {
+      
+        clearInterval(timer); 
+        
+        timer = setInterval(nambahAngka, 1000); 
+    }
+
+    function berhenti() {
+        clearInterval(timer);
+    }
+
+    function ulang() {
+        clearInterval(timer); // Matiin dulu intervalnya
+        angka = 0; // Balikin ke 0
+        document.getElementById("tampilWaktu").innerHTML = angka; // Tembakin angka 0 ke layar
+    }
+</script>
+</body>
+</html>

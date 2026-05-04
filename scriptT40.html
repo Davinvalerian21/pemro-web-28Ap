@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+      <h2>Kutipan Programmer Hari Ini:</h2>
+    
+    <p id="tempatQuote">"Klik tombol di bawah buat lihat quote!"</p>
+
+    <button onclick="gantiQuote()">Quote Acak</button>
+
+<script type="text/javascript">
+    var kutipan = [
+        "It’s not a bug, it’s an undocumented feature.",
+        "Ngoding: 10% nulis kode, 90% nyari titik koma yang ilang.",
+        "Nggak peduli jalan di komputermu, ini kan mau ditaruh di server!",
+        "Kopi adalah bahan bakar utama programmer.",
+        "Kalo kodenya udah jalan, JANGAN DISENTUH LAGI!",
+        "Programmer yang baik nulis kode yang bisa dibaca manusia, bukan cuma mesin.",
+        "Selesaikan dulu masalahnya, baru tulis kodenya.",
+        "Di dunia ini cuma ada 10 tipe orang: yang paham binary dan yang nggak.",
+        "Fitur copy-paste diciptakan oleh programmer untuk programmer.",
+        "Nulis kode itu kayak nulis lelucon. Kalo harus dijelasin, berarti itu jelek."
+    ];
+
+    function gantiQuote() {
+        var indexAcak = Math.floor(Math.random() * kutipan.length);
+        
+        document.getElementById("tempatQuote").innerHTML = kutipan[indexAcak];
+    }
+</script>
+</body>
+</html>
